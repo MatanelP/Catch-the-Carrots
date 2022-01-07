@@ -1,0 +1,68 @@
+noamankri
+matanel.pataki
+
+
+=============================
+=            UML            =
+=============================
+
+When we first design our project, we couldn't thought about the exact dependencies between all of the classes.
+We were trying to keep a logically sound base code, while still not limiting ourselves regarding
+optional expending.
+We learned that at the beginning of a project, it is very important to try and design the whole idea.
+In the long run, it will help our decision making process regarding code structure.
+
+When we were done with the project, we saw that we had alot more classes and dependencies between
+them than we imagined. A more detailed first thought, could had saved us a lot of waisted time.
+
+As we can see, in the uml_after, the biggest and main change was reading the way we structured trees
+in the game.
+
+
+=============================
+=       Endless World       =
+=============================
+
+We constructed the world in way that at any given time, only game objects that are in line of sight
+are actually constructed.
+In order to achieve that, we created a CreateInRange and DeleteInRange function.
+Both will receive a minimum and maximum X coordinates that represents a certain area in the game.
+As the avatar moves, some objects is exiting the camera's line of sight, therefore the DeleteInRange function
+is called in order to delete the no-longer-visible objects.
+At the same time the CreateInRange function is called in order to create (some what) new objects in the
+avatar's path to encounter.
+
+By using reconstructed-randomly created object, and also keeping track on the way our
+object is created and manged, upon return we could recreate the exact the same objects that were deleted.
+
+The system memory, at any given moment, only manage around the same around of objects, so in total there
+is no excess calculations to perform and the game will run smoothly.
+
+
+=============================
+=           Trees           =
+=============================
+
+We chose to represent the Trees using a few classes: Tree, Leaves, Trunk, Leaf.
+Logically, each class has a certain purpose, and it holds it own methods and fields.
+By delegating to minor classes we achieved an neatly-readable written code and avoided damaged functionality.
+
+
+=============================
+=          Design           =
+=============================
+
+At times we tried shifting from a procedural programming to a more object oriented programing.
+When we created the trees, we thought about creating a class
+that manage everything to do with a tree element animation.
+Eventually we came to the conclusion the procedural programming
+is making much more sense while keeping the code readable.
+
+
+=============================
+=           Bonus           =
+=============================
+
+Implemented a game where the avatar can shoot fire balls (using the CTRL key), and the user in able to
+destroy evil flying carrots within a time frame.
+The game also keeps track on the user's high score.
